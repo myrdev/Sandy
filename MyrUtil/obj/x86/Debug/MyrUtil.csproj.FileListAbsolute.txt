@@ -1,0 +1,9 @@
+E:\mycode\MyrUtil\MyrUtil\MyrUtil\bin\Debug\MyrUtil.exe
+E:\mycode\MyrUtil\MyrUtil\MyrUtil\bin\Debug\MyrUtil.pdb
+E:\mycode\MyrUtil\MyrUtil\MyrUtil\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\mycode\MyrUtil\MyrUtil\MyrUtil\obj\x86\Debug\MyrUtil.Form1.resources
+E:\mycode\MyrUtil\MyrUtil\MyrUtil\obj\x86\Debug\MyrUtil.Properties.Resources.resources
+E:\mycode\MyrUtil\MyrUtil\MyrUtil\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\mycode\MyrUtil\MyrUtil\MyrUtil\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\mycode\MyrUtil\MyrUtil\MyrUtil\obj\x86\Debug\MyrUtil.exe
+E:\mycode\MyrUtil\MyrUtil\MyrUtil\obj\x86\Debug\MyrUtil.pdb
