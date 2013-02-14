@@ -55,7 +55,7 @@ namespace Vigil
                         var activeAt = startedAt.AddSeconds(duration);
 
                         var secTill = Convert.ToInt32(Math.Floor((activeAt - now).TotalSeconds));
-                        var MinAndSec = secTill > 0 ? ((secTill / 60)>0?(secTill / 60).ToString() + "min ":"") + (secTill % 60).ToString() + "sec" : timer.Key;
+                        var MinAndSec = secTill > 0 ? ((secTill / 60)>0?(secTill / 60).ToString() + "min ":"") + (secTill % 60).ToString() + "sec" : currentTimer + "\n" + timer.Key;
                         //Console.WriteLine(TimerSettings.Where(t => t.Key == timer.Key).SingleOrDefault().Value["message"] + " up in " + MinAndSec);
 
 

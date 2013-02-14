@@ -48,10 +48,11 @@ namespace Vigil
                     var img = Image.FromFile(t.Value["image"]).Resize(90, 90);
                     Console.WriteLine("Image added: " + t.Value["image"] + " at " + row + ":" + col);
                     pb.Image = img;
-                    pb.Text = t.Key;
+
+                    pb.Text = t.Value["message"] + "\n"+ t.Key;
                     pb.ForeColor = Color.White;
                     pb.TextAlign = ContentAlignment.BottomCenter;
-                    pb.Font = new Font( FontFamily.GenericSerif, (float)20, FontStyle.Bold);
+                    pb.Font = new Font( FontFamily.GenericSerif, (float)18, FontStyle.Bold);
                     pb.Padding = new System.Windows.Forms.Padding(5);//dodgy hack so there is 5 pixels on the top and left, by setting it to size 90x90 in a 100x100 frame, we also get a 5px border on bot+right too
                     pb.BackColor = System.Drawing.Color.Transparent;
                     pb.Location = new Point(col * 100, row * 100);
