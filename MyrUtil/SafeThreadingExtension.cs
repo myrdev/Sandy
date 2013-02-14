@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.ComponentModel;
 
-namespace MyrUtil
+namespace Vigil
 {
     public static class SafeThreadingExtension
     {

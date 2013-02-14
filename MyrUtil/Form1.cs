@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Threading; 
 
 
-namespace MyrUtil
+namespace Vigil
 {
     public partial class Form1 : Form
     {
@@ -24,12 +24,14 @@ namespace MyrUtil
 
             API = new WinAPI(conf.timer);
             Thread InterceptThread = new Thread(new ThreadStart(API.RunMe));
+            InterceptThread.IsBackground = true;
             InterceptThread.Start();
 
             Timer = new CheckTimers(API, conf.timer);
             DrawTimers(conf.timer);
 
             Thread TimerThread = new Thread(new ThreadStart(Timer.RunMe));
+            TimerThread.IsBackground = true;
             TimerThread.Start();
         }
 

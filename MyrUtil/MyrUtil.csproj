@@ -8,8 +8,8 @@
     <ProjectGuid>{03CA5FBF-54F5-4F2B-BDAF-CB04BF839144}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyrUtil</RootNamespace>
-    <AssemblyName>MyrUtil</AssemblyName>
+    <RootNamespace>Vigil</RootNamespace>
+    <AssemblyName>Vigil</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -89,6 +89,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

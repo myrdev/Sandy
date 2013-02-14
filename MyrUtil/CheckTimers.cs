@@ -6,7 +6,7 @@ using System.Threading;
 
 using System.Windows.Forms;
 
-namespace MyrUtil
+namespace Vigil
 {
     class CheckTimers
     {
@@ -85,6 +85,7 @@ namespace MyrUtil
                         var play = new Play();
                         play.fn = TimerSettings.Where(t => t.Key == timer.Key).SingleOrDefault().Value["file"] + ".wav";
                         Thread PlayThread = new Thread(new ThreadStart(play.RunMe));
+                        PlayThread.IsBackground = true;
                         PlayThread.Start();
 
                         LastAnnounce = DateTime.Now;
@@ -106,6 +107,7 @@ namespace MyrUtil
                         var play = new Play();
                         play.fn = TimerSettings.Where(t => t.Key == timer.Key).SingleOrDefault().Value["file"] + "_EW.wav";
                         Thread PlayThread = new Thread(new ThreadStart(play.RunMe));
+                        PlayThread.IsBackground = true;
                         PlayThread.Start();
 
                         LastAnnounce = DateTime.Now;

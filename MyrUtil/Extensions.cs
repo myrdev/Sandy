@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-namespace MyrUtil
+namespace Vigil
 {
     public static class Extensions
     {

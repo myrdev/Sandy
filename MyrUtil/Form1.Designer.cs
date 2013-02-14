@@ -1,4 +1,4 @@
-﻿namespace MyrUtil
+﻿namespace Vigil
 {
     partial class Form1
     {

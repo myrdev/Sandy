@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 
-namespace MyrUtil
+namespace Vigil
 {
     internal class WinAPI
     {
