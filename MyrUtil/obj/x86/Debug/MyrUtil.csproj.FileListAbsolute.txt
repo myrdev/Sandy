@@ -7,3 +7,12 @@ E:\mycode\MyrUtil\MyrUtil\MyrUtil\obj\x86\Debug\GenerateResource.read.1.tlog
 E:\mycode\MyrUtil\MyrUtil\MyrUtil\obj\x86\Debug\GenerateResource.write.1.tlog
 E:\mycode\MyrUtil\MyrUtil\MyrUtil\obj\x86\Debug\MyrUtil.exe
 E:\mycode\MyrUtil\MyrUtil\MyrUtil\obj\x86\Debug\MyrUtil.pdb
+E:\myrepositories\Sandy\MyrUtil\obj\x86\Debug\MyrUtil.exe
+E:\myrepositories\Sandy\MyrUtil\obj\x86\Debug\MyrUtil.pdb
+E:\myrepositories\Sandy\MyrUtil\bin\Debug\MyrUtil.exe
+E:\myrepositories\Sandy\MyrUtil\bin\Debug\MyrUtil.pdb
+E:\myrepositories\Sandy\MyrUtil\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\myrepositories\Sandy\MyrUtil\obj\x86\Debug\MyrUtil.Form1.resources
+E:\myrepositories\Sandy\MyrUtil\obj\x86\Debug\MyrUtil.Properties.Resources.resources
+E:\myrepositories\Sandy\MyrUtil\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\myrepositories\Sandy\MyrUtil\obj\x86\Debug\GenerateResource.write.1.tlog
