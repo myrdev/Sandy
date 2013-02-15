@@ -39,7 +39,7 @@ namespace Vigil
 
                 foreach (string line in unparsedLines)
                 {
-                    if (line.StartsWith("#"))
+                    if (line.StartsWith("#") || line.Equals(""))
                     {
                         //skip comments
                     }

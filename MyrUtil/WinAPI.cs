@@ -11,7 +11,7 @@ namespace Vigil
     {
         private static Dictionary<string, Dictionary<string, string>> Timers;
         private static Dictionary<string, Dictionary<string, string>> Commands;
-
+        private static string lastPressedKey = "";
         public static Dictionary<string, DateTime> ActiveTimers;
 
         private const int WH_KEYBOARD_LL = 13;
@@ -43,9 +43,9 @@ namespace Vigil
         public void RunMe()
         {
             _hookID = SetHook(_proc);
-            Console.WriteLine("About to start hook");
+            //Console.WriteLine("About to start hook");
             Application.Run();
-            Console.WriteLine("Hook started, probably never see this");
+            //Console.WriteLine("Hook started, probably never see this");
         }
 
         public Dictionary<string, DateTime> GetTimers()
@@ -60,23 +60,35 @@ namespace Vigil
 
         private delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
 
+        private static void RunBatFile(string key)
+        {
+            var proc = new System.Diagnostics.Process();
+            proc.StartInfo.FileName = Commands[key]["file"];
+            proc.StartInfo.RedirectStandardError = false;
+            proc.StartInfo.RedirectStandardOutput = false;
+            proc.StartInfo.UseShellExecute = false;
+            proc.Start();
+            proc.WaitForExit();
+        }
+
         private static IntPtr HookCallback(int nCode, IntPtr wParam, IntPtr lParam)
         {
             if (nCode >= 0 && wParam == (IntPtr)WM_KEYDOWN)
             {
                 int vkCode = Marshal.ReadInt32(lParam);
                 string pressed_key = ((Keys)vkCode).ToString();
-                if (Commands.ContainsKey(pressed_key))
+
+                
+                if (Commands.ContainsKey(lastPressedKey + "-" + pressed_key))
+                {
+                    Console.WriteLine("Command key combo pressed: " + lastPressedKey + "-" + pressed_key);
+
+                    RunBatFile(lastPressedKey + "-" + pressed_key);
+                }else if (Commands.ContainsKey(pressed_key))
                 {
                     Console.WriteLine("Command key pressed: " + pressed_key);
 
-                    var proc = new System.Diagnostics.Process();
-                    proc.StartInfo.FileName = Commands[pressed_key]["file"];
-                    proc.StartInfo.RedirectStandardError = false;
-                    proc.StartInfo.RedirectStandardOutput = false;
-                    proc.StartInfo.UseShellExecute = false;
-                    proc.Start();
-                    proc.WaitForExit();
+                    RunBatFile(pressed_key);
                 }
 
                 if (Timers.ContainsKey(pressed_key))
@@ -86,6 +98,8 @@ namespace Vigil
                 }
          
                 //Console.WriteLine("key '" + pressed_key + "' was pressed");
+
+                lastPressedKey = pressed_key!=lastPressedKey ? pressed_key : lastPressedKey;
 
             }
             return CallNextHookEx(_hookID, nCode, wParam, lParam);

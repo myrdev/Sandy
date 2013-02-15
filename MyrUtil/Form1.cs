@@ -46,7 +46,7 @@ namespace Vigil
                     var pb = new Label();
                     pb.Size = new Size(100, 100);
                     var img = Image.FromFile(t.Value["image"]).Resize(90, 90);
-                    Console.WriteLine("Image added: " + t.Value["image"] + " at " + row + ":" + col);
+                    //Console.WriteLine("Image added: " + t.Value["image"] + " at " + row + ":" + col);
                     pb.Image = img;
 
                     pb.Text = t.Value["message"] + "\n"+ t.Key;
