@@ -16,3 +16,11 @@ E:\myrepositories\Sandy\MyrUtil\obj\x86\Debug\Vigil.Properties.Resources.resourc
 E:\myrepositories\Sandy\MyrUtil\obj\x86\Debug\Vigil.exe
 E:\myrepositories\Sandy\MyrUtil\obj\x86\Debug\Vigil.pdb
 E:\myrepositories\Sandy\MyrUtil\obj\x86\Debug\Vigil.Form1.resources
+C:\csharp\Sandy\MyrUtil\obj\x86\Debug\Vigil.exe
+C:\csharp\Sandy\MyrUtil\obj\x86\Debug\Vigil.pdb
+C:\csharp\Sandy\MyrUtil\bin\Debug\Vigil.exe
+C:\csharp\Sandy\MyrUtil\bin\Debug\Vigil.pdb
+C:\csharp\Sandy\MyrUtil\obj\x86\Debug\MyrUtil.csprojResolveAssemblyReference.cache
+C:\csharp\Sandy\MyrUtil\obj\x86\Debug\Vigil.Form1.resources
+C:\csharp\Sandy\MyrUtil\obj\x86\Debug\Vigil.Properties.Resources.resources
+C:\csharp\Sandy\MyrUtil\obj\x86\Debug\MyrUtil.csproj.GenerateResource.Cache

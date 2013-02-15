@@ -8,7 +8,7 @@ namespace Vigil
     class Config
     {
         //public Dictionary<string, Dictionary<string, string>> option; //NYI
-        //public Dictionary<string, Dictionary<string, string>> keypress; //NYI
+        public Dictionary<string, Dictionary<string, string>> cmd; //NYI
         public Dictionary<string, Dictionary<string, string>> timer;
 
         private Dictionary<string, string> SplitDelineatedKVPairs(string s, char pairDelineator, char keyValueDelineator)
@@ -30,6 +30,7 @@ namespace Vigil
         {
             //<option name,<bunch of stuff about that option>>
             timer = new Dictionary<string, Dictionary<string, string>>();
+            cmd = new Dictionary<string, Dictionary<string, string>>();
 
             if (System.IO.File.Exists(fileLoc))
             {
@@ -50,8 +51,13 @@ namespace Vigil
 
                             if (keypress["keypress"] == "timer")
                             {
-                                Console.WriteLine("Adding keypress: " + line);
+                                Console.WriteLine("Adding timer: " + line);
                                 timer.Add(keypress["key"], keypress);
+                            }
+                            else if (keypress["keypress"] == "cmd")
+                            {
+                                Console.WriteLine("Adding cmd: " + line);
+                                cmd.Add(keypress["key"], keypress);
                             }
                             else
                             {

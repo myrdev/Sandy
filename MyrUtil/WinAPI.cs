@@ -10,7 +10,10 @@ namespace Vigil
     internal class WinAPI
     {
         private static Dictionary<string, Dictionary<string, string>> Timers;
+        private static Dictionary<string, Dictionary<string, string>> Commands;
+
         public static Dictionary<string, DateTime> ActiveTimers;
+
         private const int WH_KEYBOARD_LL = 13;
         private const int WM_KEYDOWN = 0x0100;
         private static LowLevelKeyboardProc _proc = HookCallback;
@@ -30,9 +33,10 @@ namespace Vigil
             }
         }
 
-        public WinAPI(Dictionary<string, Dictionary<string, string>> timers)
+        public WinAPI(Dictionary<string, Dictionary<string, string>> timers, Dictionary<string,Dictionary<string,string>> commands)
         {
             Timers = timers;
+            Commands = commands;
             ActiveTimers = new Dictionary<string, DateTime>();
         }
 
@@ -62,16 +66,27 @@ namespace Vigil
             {
                 int vkCode = Marshal.ReadInt32(lParam);
                 string pressed_key = ((Keys)vkCode).ToString();
+                if (Commands.ContainsKey(pressed_key))
+                {
+                    Console.WriteLine("Command key pressed: " + pressed_key);
+
+                    var proc = new System.Diagnostics.Process();
+                    proc.StartInfo.FileName = Commands[pressed_key]["file"];
+                    proc.StartInfo.RedirectStandardError = false;
+                    proc.StartInfo.RedirectStandardOutput = false;
+                    proc.StartInfo.UseShellExecute = false;
+                    proc.Start();
+                    proc.WaitForExit();
+                }
+
                 if (Timers.ContainsKey(pressed_key))
                 {
                     Console.WriteLine(Timers[pressed_key]["message"] + " timer started");
                     ActiveTimers.Add(pressed_key, DateTime.Now);
                 }
-                else
-                {
-                    //Console.WriteLine("Untracked key '" + pressed_key + "' was pressed");
-                    //key not required
-                }
+         
+                //Console.WriteLine("key '" + pressed_key + "' was pressed");
+
             }
             return CallNextHookEx(_hookID, nCode, wParam, lParam);
         }

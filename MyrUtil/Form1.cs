@@ -22,7 +22,7 @@ namespace Vigil
 
             Config conf = new Config(@"config.txt");
 
-            API = new WinAPI(conf.timer);
+            API = new WinAPI(conf.timer, conf.cmd);
             Thread InterceptThread = new Thread(new ThreadStart(API.RunMe));
             InterceptThread.IsBackground = true;
             InterceptThread.Start();
